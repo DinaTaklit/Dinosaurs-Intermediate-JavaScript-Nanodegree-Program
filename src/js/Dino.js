@@ -44,4 +44,19 @@ export default class Dino {
             ? `I am heavier than you :)`
             : `OMG! you are heavier than me!!`
     }
+
+    /**
+     * @description Compare human height with dino height.
+     * @param {string} humanHeightFeet The human Height feet part
+     * @param {string} humanHeightInches The human Height Inches part
+     * @returns {string} The result of the comparison as a fact
+     */
+    compareHeight(humanHeightFeet, humanheightInches) {
+        const humanHeight = humanHeightFeet * 12 + humanheightInches
+        return humanHeight === this.height
+            ? 'We have the same height xD'
+            : humanHeight < this.height
+            ? 'I am taller than you :)'
+            : 'You are taller than me :o!'
+    }
 }
