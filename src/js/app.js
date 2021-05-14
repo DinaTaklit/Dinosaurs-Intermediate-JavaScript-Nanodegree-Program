@@ -18,3 +18,25 @@ export const createDinoOnjects = (dinos) =>
                 dino.fact
             )
     )
+
+/**
+ * @description Generate random fact for the dino
+ * @param {object} dino The dinosaur object
+ * @param {object} human The human object
+ * @returns {string} return a random fact from the generated facts array
+ */
+
+const generateRandomFact = (dino, human = {}) => {
+    const facts = [
+        dino.fact,
+        `I lived in ${dino.where}`,
+        `I lived during ${dino.when}`,
+    ]
+    facts.push(dino.compareDiet(human.diet))
+    facts.push(dino.compareWeight(human.weight))
+    facts.push(dino.compareHeight(human.height))
+
+    const randomIndex = Math.floor(Math.random() * facts.length)
+
+    return facts[randomIndex]
+}
