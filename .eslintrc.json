@@ -9,7 +9,7 @@
       }
     ],
     "prefer-template": "off",
-    "indent": [1, 2],
+    "indent": [1, 4],
     "object-curly-spacing": 1,
     "no-multiple-empty-lines": [
       1,
@@ -21,8 +21,8 @@
     "no-var": 1,
     "camelcase": 1,
     "no-new-wrappers": 1,
-    "no-nested-ternary": 1,
-    "no-console": 1,
+    "no-nested-ternary": 0, // change it to 0 to allow nested ternary
+    "no-console": 0,
     "no-template-curly-in-string": 1,
     "no-self-compare": 1,
     "import/prefer-default-export": 0,
