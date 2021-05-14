@@ -105,3 +105,11 @@ export const buildTiles = (dinos, human) => {
         grid.appendChild(tileDom)
     })
 }
+
+/**
+ * @description Remove form from the screen
+ */
+export const hideFrom = () => {
+    const form = document.querySelector('#dino-compare')
+    form.style.display = 'none'
+}
