@@ -57,3 +57,22 @@ const dinoTiles = (dinos, human = {}) =>
             : generateRandomFact(dino, human),
     }))
 
+/**
+ * @description Create html Tile
+ * @param {object} tile The tile object containing
+ * the tile title, image and fact
+ * @returns {HTMLElement} return the tile html element
+ */
+
+const createTile = (tile) => {
+    const tileDom = document.createElement('div')
+    tileDom.classList.add('grid-item')
+    const gridString = `
+        <h3> ${tile.title}</h3>
+        <img src ="../images/${tile.image}" alt ="${tile.title}"/>
+        <p>${tile.fact}</p>
+    `
+    tileDom.innerHTML = gridString
+    return tileDom
+}
+
