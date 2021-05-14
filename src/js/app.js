@@ -40,3 +40,20 @@ const generateRandomFact = (dino, human = {}) => {
 
     return facts[randomIndex]
 }
+
+/**
+ * @description Create dinos tile array objects
+ * @param {array} dinos  Array of dinos objects
+ * @param {object} human The human object
+ * @returns {array} return an array containing dinos tiles{title, image, fact}
+ */
+
+const dinoTiles = (dinos, human = {}) =>
+    dinos.map((dino) => ({
+        title: dino.species,
+        image: `${encodeURI(dino.species.toLowerCase())}.png`,
+        fact: dino.species === 'Pigeon'
+            ? dino.fact
+            : generateRandomFact(dino, human),
+    }))
+
