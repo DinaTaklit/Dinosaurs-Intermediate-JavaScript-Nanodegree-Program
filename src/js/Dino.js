@@ -31,4 +31,17 @@ export default class Dino {
             ? `We are both ${humanDiet}s`
             : `You are ${humanDiet}, but I am ${this.diet}`
     }
+
+    /**
+     * @description Compare human weight with dino weight.
+     * @param {string} humanWeight The human
+     * @returns {string} The result of the comparison as a fact
+     */
+    compareWeight(humanWeight) {
+        return this.weight === humanWeight
+            ? 'Aww we have same weight :o!'
+            : this.weight > humanWeight
+            ? `I am heavier than you :)`
+            : `OMG! you are heavier than me!!`
+    }
 }
