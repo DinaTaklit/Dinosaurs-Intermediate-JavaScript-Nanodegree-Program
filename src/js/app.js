@@ -76,3 +76,32 @@ const createTile = (tile) => {
     return tileDom
 }
 
+/**
+ * @description Build tiles and inject them to the dom
+ * @param {array} dinos  Array of dinos objects
+ * @param {object} human The human object
+ */
+export const buildTiles = (dinos, human) => {
+    // Get the grid root
+    const grid = document.querySelector('#grid')
+
+    // Get dinos tiles
+    const tiles = dinoTiles(dinos, human)
+
+    // Add the human tile in the middle
+    tiles.splice(4, 0, {
+        title: human.name,
+        image: `${human.name.toLowerCase()}.png`,
+        fact: `Name: ${human.name}, diet:${human.diet},
+            weight: ${human.weight}, height ${human.feet}
+            feet and ${human.inches} inches`,
+    })
+
+    // Add tiles to the DOM grid element
+    tiles.forEach((tile) => {
+        // create a tile
+        const tileDom = createTile(tile)
+        // add tile to the dom
+        grid.appendChild(tileDom)
+    })
+}
