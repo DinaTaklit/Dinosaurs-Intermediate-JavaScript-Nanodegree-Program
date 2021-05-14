@@ -20,4 +20,15 @@ export default class Dino {
         this.when = when
         this.fact = fact
     }
+
+    /**
+     * @description Compare human diet with dino diet.
+     * @param {string} humanDiet The human diet
+     * @returns {string} The result of the comparison as a fact
+     */
+    compareDiet(humanDiet) {
+        return humanDiet === this.diet
+            ? `We are both ${humanDiet}s`
+            : `You are ${humanDiet}, but I am ${this.diet}`
+    }
 }
