@@ -52,9 +52,10 @@ const dinoTiles = (dinos, human = {}) =>
     dinos.map((dino) => ({
         title: dino.species,
         image: `${encodeURI(dino.species.toLowerCase())}.png`,
-        fact: dino.species === 'Pigeon'
-            ? dino.fact
-            : generateRandomFact(dino, human),
+        fact:
+            dino.species === 'Pigeon'
+                ? dino.fact
+                : generateRandomFact(dino, human),
     }))
 
 /**
@@ -69,7 +70,7 @@ const createTile = (tile) => {
     tileDom.classList.add('grid-item')
     const gridString = `
         <h3> ${tile.title}</h3>
-        <img src ="../images/${tile.image}" alt ="${tile.title}"/>
+        <img src="./assets/images/${tile.image}" alt ="${tile.title}"/>
         <p>${tile.fact}</p>
     `
     tileDom.innerHTML = gridString
@@ -91,7 +92,7 @@ export const buildTiles = (dinos, human) => {
     // Add the human tile in the middle
     tiles.splice(4, 0, {
         title: human.name,
-        image: `${human.name.toLowerCase()}.png`,
+        image: `human.png`,
         fact: `Name: ${human.name}, diet:${human.diet},
             weight: ${human.weight}, height ${human.feet}
             feet and ${human.inches} inches`,
